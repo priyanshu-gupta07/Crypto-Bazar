@@ -17,7 +17,6 @@ const HandleSignup = async (req, res) => {
             console.log(hash);
         })
         }); 
-        
         return res.json({message: 'User created successfully'});
 }
 
@@ -27,6 +26,7 @@ const HandleLogin = async (req, res) => {
     if(!user){
         return res.status(404).json({message: 'User not found'});
     }
+    // console.log(user._id);
     bcrypt.compare(password, user.password, (err, result) => {
         if (err) {
             console.error('Error comparing passwords:', err);
@@ -35,6 +35,11 @@ const HandleLogin = async (req, res) => {
     
     if (result) {
         console.log('Passwords match! User authenticated.');
+        const token=jwtsign({
+            mail:user.email
+        });
+        res.cookie('token',token);
+        res.cookie('_id',user._id);
         res.status(200).json({message: 'User authenticated'});
     } else {
         console.log('Passwords do not match! Authentication failed.');
