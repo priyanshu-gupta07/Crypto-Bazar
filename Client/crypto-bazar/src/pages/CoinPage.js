@@ -18,7 +18,7 @@ const CoinPage = () => {
     const fetchCoin = async () => {
       setLoading(true);
       try {
-        const { data } = await axios.get(SingleCoin(id)); // Adjust based on your setup
+        const { data } = await axios.get(SingleCoin(id));
         setCoin(data);
         setLoading(false);
       } catch (error) {
