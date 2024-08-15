@@ -8,6 +8,7 @@ const queryrouter = require ("./routes/queries.js")
 const auth = require('./middlewares/auth.js');
 const cookieParser = require('cookie-parser');
 dotenv.config();
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;
 
@@ -17,6 +18,10 @@ app.listen(PORT, () => {
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({
+    origin: 'http://localhost:3000', // your frontend URL
+    credentials: true
+  }));
 app.use(express.urlencoded({extended: true}));
 Connection();
 

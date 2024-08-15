@@ -13,9 +13,9 @@ const GeneratePrompt=async (req,res) =>{
   
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    const id= req.cookies?._id;
-    console.log(id);
-    await Query.create({prompt:prompt,content:JSON.stringify(response),user:id});
+    // const id= req.cookies?._id;
+    // console.log(id);
+    // await Query.create({prompt:prompt,content:JSON.stringify(response),user:id});
     res.status(200).json({response});
 }
 

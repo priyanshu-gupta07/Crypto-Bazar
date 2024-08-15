@@ -2,9 +2,14 @@ const jwt=require('jsonwebtoken');
 const {jwtverify} = require('../Service/auth.js');
 
 const auth = async (req, res, next) => {
+    const {authorization} = req.headers;
+    console.log(authorization);
+    if(!authorization){
+        return res.status(401).json({message: 'You must be logged in'});
+    }
+    const token = authorization.replace('Bearer ', '');
     try {
-        const token = req.cookies?.token;
-        // console.log(token);
+        console.log(token);
         if(!token){
             throw new Error();
         }
