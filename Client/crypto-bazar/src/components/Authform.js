@@ -63,7 +63,7 @@ const AuthForm = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:5000/user/logout', {}, {
+      await axios.post('/user/logout', {}, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

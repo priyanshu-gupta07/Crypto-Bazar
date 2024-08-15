@@ -18,7 +18,7 @@ const Editor = () => {
     setError('');
     setContent('');
 
-    const url = 'http://localhost:5000/query';
+    const url = '/query';
     try {
       const requestBody = { prompt };
       
