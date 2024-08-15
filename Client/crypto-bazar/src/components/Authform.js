@@ -34,8 +34,8 @@ const AuthForm = () => {
     setError('');
 
     const url = isLogin
-      ? 'http://localhost:5000/user/login'
-      : 'http://localhost:5000/user/signup';
+      ? '/user/login'
+      : '/user/signup';
 
     try {
       const requestBody = isLogin
