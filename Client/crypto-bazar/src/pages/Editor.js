@@ -18,7 +18,7 @@ const Editor = () => {
     setError('');
     setContent('');
 
-    const url = 'https://crypto-bazar-six.vercel.app/query';
+    const url = 'https://crypto-bazar-pxgn.vercel.app/query';
     try {
       const requestBody = { prompt };
       
