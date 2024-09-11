@@ -1,8 +1,6 @@
 const mongoose= require('mongoose');
-const dotenv=require('dotenv');
-dotenv.config();
 
-const ConnectionString="process.env.MONGO_URL";
+const ConnectionString="mongodb+srv://bt22cse188:Password@cryptobazar.eit1e8b.mongodb.net/?retryWrites=true&w=majority&appName=CryptoBazar";
 
 const Connection = () => {
     return (
