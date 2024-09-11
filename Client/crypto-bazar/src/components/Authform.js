@@ -35,7 +35,7 @@ const AuthForm = () => {
 
     const url = isLogin
       ? 'https://crypto-bazar-pxgn.vercel.app/user/login'
-      : 'https://crypto-bazar-pxgn.vercel.app//user/signup';
+      : 'https://crypto-bazar-pxgn.vercel.app/user/signup';
 
     try {
       const requestBody = isLogin
