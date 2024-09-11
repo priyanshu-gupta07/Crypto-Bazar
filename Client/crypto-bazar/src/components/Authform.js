@@ -34,8 +34,8 @@ const AuthForm = () => {
     setError('');
 
     const url = isLogin
-      ? 'https://crypto-bazar-six.vercel.app/user/login'
-      : 'https://crypto-bazar-six.vercel.app/user/signup';
+      ? 'https://crypto-bazar-pxgn.vercel.app/user/login'
+      : 'https://crypto-bazar-pxgn.vercel.app//user/signup';
 
     try {
       const requestBody = isLogin
@@ -63,7 +63,7 @@ const AuthForm = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('https://crypto-bazar-six.vercel.app/user/logout', {}, {
+      await axios.post('https://crypto-bazar-pxgn.vercel.app/user/logout', {}, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
